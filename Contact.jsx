@@ -1,17 +1,21 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
+
 const Contact = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    //const formData = new FormData(e.target);
+  useEffect(() => {
+    // Check for a redirect or returning to the previous page
+    const urlParams = new URLSearchParams(window.location.search);
+    const successParam = urlParams.get("success");
 
-    // Simulating form submission (replace this with your actual logic)
-    // Send formData to your backend for email processing
-
-    // For demonstration purposes, show an alert on successful form submission
-    alert("Message sent to Arya successfully!"); // Replace this with your own logic for email submission
-
-    // Reset the form after submission
-    e.target.reset();
-  };
+    if (successParam === "true") {
+      // Show the toast notification
+      toast.success("Arya will look into it!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 3000, // Auto close after 3 seconds
+      });
+    }
+  }, []);
 
   return (
     <div className="bg-gray-900 py-12">
@@ -19,7 +23,12 @@ const Contact = () => {
         <h1 className="text-4xl font-bold mb-8 text-center text-white">
           Contact Me
         </h1>
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+        <form
+          action="https://getform.io/f/f23ee7da-390b-4a5f-b9d9-4dfb4a5c0603"
+          method="POST"
+          encType="multipart/form-data"
+          className="max-w-md mx-auto"
+        >
           <div className="mb-4">
             <label
               htmlFor="name"
@@ -31,7 +40,7 @@ const Contact = () => {
               type="text"
               id="name"
               name="name"
-              className="w-full border border-gray-300 rounded-md py-2 px-3"
+              className="w-full border border-gray-300 rounded-md py-2 px-3 text-black"
               placeholder="Your Name"
               required
             />
@@ -47,7 +56,7 @@ const Contact = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full border border-gray-300 rounded-md py-2 px-3"
+              className="w-full border border-gray-300 rounded-md py-2 px-3 text-black"
               placeholder="Your Email"
               required
             />
@@ -55,14 +64,14 @@ const Contact = () => {
           <div className="mb-4">
             <label
               htmlFor="message"
-              className="block mb-2 text-xl text-white font-bold"
+              className="block mb-2 text-xl text-white font-bold "
             >
               Message
             </label>
             <textarea
               id="message"
               name="message"
-              className="w-full border border-gray-300 rounded-md py-2 px-3"
+              className="w-full border border-gray-300 rounded-md py-2 px-3 text-black"
               placeholder="Your Message"
               rows="5"
               required
@@ -75,6 +84,7 @@ const Contact = () => {
             Submit
           </button>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );

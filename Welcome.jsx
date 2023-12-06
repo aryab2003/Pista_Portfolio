@@ -54,8 +54,8 @@ const WelcomePage = () => {
 
   return (
     <div>
-      <div className="bg-gradient-to-r from-blue-400 to-purple-600 min-h-screen flex items-center justify-center relative">
-        <div className="text-center text-white z-10 p-4 md:p-0">
+      <div className="bg-gradient-to-r from-blue-400 to-purple-600 min-h-screen flex flex-col md:flex-row items-center justify-center relative">
+        <div className="text-center text-white z-10 p-4 md:p-0 md:flex-1">
           <h1
             onMouseEnter={moveElement}
             onMouseLeave={resetElement}
