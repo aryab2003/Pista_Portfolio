@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css */
+body {
+  background-color: black;
+  margin: 0; /* Reset default margin for body */
+  font-family: sans-serif; /* Set font family as an example */
+  color: white; /* Set text color to white for better visibility */
+}
