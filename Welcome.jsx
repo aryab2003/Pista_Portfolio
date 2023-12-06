@@ -54,36 +54,12 @@ const WelcomePage = () => {
 
   return (
     <div>
-      <nav className="bg-gray-800 text-white p-7 opacity-70">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center">
-            <img
-              src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-614810.jpg&fm=jpg"
-              alt="Your Photo"
-              className="h-12 w-12 rounded-full mr-4"
-            />
-            <div className="text-xl font-bold">Arya Bhattacharyya</div>
-          </div>
-          <ul className="flex space-x-16">
-            <li>
-              <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="/projects">Projects</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
       <div className="bg-gradient-to-r from-blue-400 to-purple-600 min-h-screen flex items-center justify-center relative">
-        <div className="text-center text-white z-10">
+        <div className="text-center text-white z-10 p-4 md:p-0">
           <h1
             onMouseEnter={moveElement}
             onMouseLeave={resetElement}
-            className="text-6xl font-bold mb-4"
+            className="text-4xl md:text-6xl font-bold mb-4"
           >
             Developer by Day, Dreamer by Night
           </h1>
@@ -114,7 +90,7 @@ const WelcomePage = () => {
         {showSocialLinks && (
           <div
             ref={leftPanelRef}
-            className="fixed top-160 left-10 h-full overflow-y-auto"
+            className="fixed top-20 md:top-10 md:left-10 w-40 md:w-auto h-80 md:h-auto overflow-y-auto"
           >
             <div className="bg-gray-800 bg-opacity-75 h-80 p-8">
               <ul>

@@ -49,7 +49,7 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md transform hover:scale-105 transition duration-300"
+              className="bg-white rounded-lg overflow-hidden shadow-md transform hover:scale-105 transition duration-300 sm:hover:scale-110 sm:transition-none sm:duration-500 sm:px-4 md:px-6 lg:px-8"
             >
               <img
                 src={project.imageUrl}
